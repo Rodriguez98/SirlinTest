@@ -4,24 +4,23 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from './src/components/Login'
-import Traductor2 from './src/components/Traductor2'
+import Traductor from './src/components/Traductor'
 import Menu from './src/components/Menu'
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <ImageBackground source={require('./src/img/plantilla.png')} style={styles.image}>
     <NavigationContainer>
       <Stack.Navigator>
           <Stack.Screen name="Login" component={Login}
             options={{ headerShown: false }} />
-          <Stack.Screen name="Traductor2" component={Traductor2}
+          <Stack.Screen name="Traductor" component={Traductor}
             options={{ headerShown: false }} />
-          <Stack.Screen name="Menu" component={Menu} />
+          <Stack.Screen name="Menu" component={Menu} 
+           options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
-    </ImageBackground>
   );
 }
 
