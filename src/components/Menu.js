@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageBackground, TouchableOpacity, View, Text, StyleSheet } from "react-native";
+import { ImageBackground, Image, TouchableOpacity, View, Text, StyleSheet } from "react-native";
 import RNPickerSelect from 'react-native-picker-select';
 
 const Menu = ({ navigation }) => {
@@ -29,33 +29,29 @@ const Menu = ({ navigation }) => {
 
         <View style={styles.viewButton1}>
           <TouchableOpacity
-            style={styles.button}
             onPress={() => navigation.navigate('Traductor')}>
 
-            <Text style={styles.text}> Danza </Text>
+            <Image source={require('../img/danza.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.button}
             onPress={() => navigation.navigate('Traductor')}>
 
-            <Text style={styles.text}> Historia </Text>
+            <Image source={require('../img/historia.png')} />
           </TouchableOpacity>
         </View>
 
         <View style={styles.viewButton2}>
           <TouchableOpacity
-            style={styles.button}
             onPress={() => navigation.navigate('Traductor')}>
 
-            <Text style={styles.text}> Musica </Text>
+            <Image source={require('../img/musica.png')} />
           </TouchableOpacity>
-    
+
           <TouchableOpacity
-            style={styles.button}
             onPress={() => navigation.navigate('Traductor')}>
 
-            <Text style={styles.text}> Ubicacion </Text>
+            <Image source={require('../img/turismo.png')} />
           </TouchableOpacity>
         </View>
       </ImageBackground>
@@ -65,40 +61,30 @@ const Menu = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   viewPickerSelect: {
-    marginTop: '-25%',
+    marginTop: '28%',
   },
   viewButton1: {
     flexDirection: "row",
-    alignItems: 'baseline',
-    justifyContent:'space-around',
-    marginLeft: 5,
-    marginTop:'35%',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    marginLeft: '10%',
+    marginRight: '-4%',
+    marginTop: '15%',
   },
   viewButton2: {
     flexDirection: "row",
     alignItems: 'flex-end',
-    justifyContent: 'space-around',
-    marginRight: 5,
-    marginTop:'50%',
+    marginLeft: '2%',
+    marginRight: '2%',
+    marginTop: '-65%',
   },
 
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical:12,
-    paddingHorizontal:32,
-    borderRadius: 4,
-    elevation: 3,
-    backgroundColor: 'black',
-    width: '40%',
-  },
- 
-  text: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: 'white',
+  viewIconContainer: {
+    flexDirection: "row",
+    marginTop: '-17%',
+    marginRight: '-16%',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
   },
   image: {
     flex: 1,
@@ -106,6 +92,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: '100%',
     height: '100%',
+  },
+  iconContainer: {
+    height: '48%',
+    width: '48%',
+    resizeMode: "cover",
+  },
+  icon: {
+    height: '95%',
+    width: '48%',
+    resizeMode: "cover",
+    justifyContent: "center",
+
   },
 });
 

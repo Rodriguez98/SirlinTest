@@ -1,11 +1,12 @@
 
-import React from "react";
-import { ImageBackground, TouchableOpacity, View, Text, SafeAreaView, StyleSheet, TextInput } from "react-native";
+import React  from "react";
+import { ImageBackground, Image, TouchableOpacity, TouchableHighlight, View, Text, SafeAreaView, StyleSheet, TextInput, Clipboard, } from "react-native";
 import RNPickerSelect from 'react-native-picker-select';
 
 const Traductor = ({ navigation }) => {
+
   return (
-    < View style= {styles.container}>
+    < View style={styles.container}>
       <ImageBackground source={require('../img/plantilla.png')} style={styles.image}>
         <View style={styles.viewPickerSelect}>
           <RNPickerSelect
@@ -43,7 +44,7 @@ const Traductor = ({ navigation }) => {
           />
         </View>
 
-        <View  style={styles.viewInputs}>
+        <View style={styles.viewInputs}>
           <TextInput
             style={styles.Input}
             placeholder="Escriba texto..."
@@ -53,6 +54,20 @@ const Traductor = ({ navigation }) => {
             style={styles.Input}
             placeholder="Escriba texto..."
           />
+        </View>
+
+        <View style={styles.viewIconContainer}>
+        <TouchableHighlight style={styles.iconContainer}>
+            <Image style={styles.icon} source={require('../img/copiar.png')} />
+          </TouchableHighlight>
+
+        <TouchableHighlight style={styles.iconContainer}>
+            <Image style={styles.icon} source={require('../img/audio.png')} />
+          </TouchableHighlight>
+
+          <TouchableHighlight style={styles.iconContainer}>
+            <Image style={styles.icon} source={require('../img/imagen.png')} />
+          </TouchableHighlight>
         </View>
 
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -69,17 +84,24 @@ const Traductor = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
-    alignItems: 'center', 
+    alignItems: 'center',
     justifyContent: 'center',
     resizeMode: "cover",
+  },
+  viewIconContainer: {
+    flexDirection: "row",
+    marginTop: '-17%',
+    marginRight: '-16%',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
   },
   viewInputs: {
     // flexDirection: 'row',
     marginTop: '15%',
   },
-  viewPickerSelect:{
+  viewPickerSelect: {
     marginTop: '30%',
   },
   Input: {
@@ -98,14 +120,25 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical:12,
-    paddingHorizontal:32,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
     marginTop: '-15%',
     marginBottom: '10%',
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: 'black',
     width: '40%',
+  },
+  buttonInput: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    marginTop: '-15%',
+    marginBottom: '10%',
+    borderRadius: 8,
+    elevation: 3,
+    backgroundColor: 'black',
+    width: '30%',
   },
   text: {
     fontSize: 16,
@@ -114,12 +147,22 @@ const styles = StyleSheet.create({
     letterSpacing: 0.25,
     color: 'white',
   },
+  iconContainer: {
+    height: 110,
+    width: 110,
+
+  },
   image: {
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
     width: '100%',
     height: '100%',
+  },
+  icon: {
+    height: '30%',
+    width: '33%',
+    
   },
 });
 
