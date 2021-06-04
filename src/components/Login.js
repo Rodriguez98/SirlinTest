@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageBackground, TouchableOpacity, View, Text, TextInput, StyleSheet } from "react-native";
+import { ImageBackground, Image, TouchableOpacity, View, Text, TextInput, StyleSheet } from "react-native";
 
 const Login = ({ navigation }) => {
   return (

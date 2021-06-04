@@ -8,14 +8,14 @@ const Traductor = ({ navigation }) => {
   return (
     < View style={styles.container}>
       <ImageBackground source={require('../img/plantilla.png')} style={styles.image}>
-        <View style={styles.viewPickerSelect}>
+        <View style={[{ marginLeft: "20%", width: "60%", borderColor: "blue", marginTop: "12%", color: 'black', }, styles.viewPickerSelect]}>
           <RNPickerSelect
             placeholder={{
               label: 'Seleccione un lenguaje',
               value: null,
             }}  
-            style={picketSelectStyles.inputAndroid}
-            itemStyle={{ backgroundColor: "grey", color: "blue", fontFamily:"Ebrima", fontSize:17 }}
+            style={picketSelectStyles}
+            //itemStyle={{ backgroundColor: "grey", color: "blue", fontFamily:"Ebrima", fontSize:17 }}
             onValueChange={(value) => console.log(value)}
             items={[
               { label: 'Español', value: 'Español' },

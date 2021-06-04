@@ -7,7 +7,7 @@ const Menu = ({ navigation }) => {
   return (
     <>
       <ImageBackground source={require('../img/plantilla.png')} style={styles.image}>
-        <View style={[{ marginLeft: "20%", width: "60%", borderColor: "blue", marginTop: "12%" }, styles.viewPickerSelect]}>
+        <View style={[{ marginLeft: "20%", width: "60%", borderColor: "blue", marginTop: "12%", color: 'black', }, styles.viewPickerSelect]}>
           <RNPickerSelect
             placeholder={{
               label: 'Seleccione un lenguaje',
@@ -61,22 +61,23 @@ const Menu = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   viewPickerSelect: {
-    marginTop: '28%',
+    marginTop: '-15%',
   },
   viewButton1: {
     flexDirection: "row",
     alignItems: 'flex-start',
     justifyContent: 'space-between',
-    marginLeft: '10%',
-    marginRight: '-4%',
-    marginTop: '15%',
+    marginLeft: '5%',
+    marginRight: '5%',
+    marginTop: '7%',
   },
   viewButton2: {
     flexDirection: "row",
     alignItems: 'flex-end',
-    marginLeft: '2%',
-    marginRight: '2%',
-    marginTop: '-65%',
+    justifyContent: 'space-between',
+    marginLeft: '5%',
+    marginRight: '5%',
+    marginTop: '15%',
   },
 
   viewIconContainer: {
@@ -92,18 +93,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: '100%',
     height: '100%',
-  },
-  iconContainer: {
-    height: '48%',
-    width: '48%',
-    resizeMode: "cover",
-  },
-  icon: {
-    height: '95%',
-    width: '48%',
-    resizeMode: "cover",
-    justifyContent: "center",
-
   },
 });
 
