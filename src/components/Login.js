@@ -10,12 +10,14 @@ const Login = ({ navigation }) => {
           <TextInput
             style={styles.Input}
             placeholder="Usuario"
+            placeholderTextColor= 'pink'
           />
 
           <Text style={styles.textInput}> Contraseña </Text>
           <TextInput
             style={styles.Input}
             placeholder="Contraseña"
+            placeholderTextColor= 'pink'
           />
         </View>
 
@@ -43,11 +45,11 @@ const styles = StyleSheet.create({
   },
   Input: {
     height: 70,
-    backgroundColor: "#fff",
-    borderWidth: 1,
-    borderColor: '#2c2c2c',
+    borderWidth: 1.5,
+    borderColor: '#4B7EFB',
     borderRadius: 15,
-    width: "100%",
+    width: "94%",
+    marginLeft: '2%',
 
     marginBottom: 10,
     color: "white",
@@ -64,16 +66,15 @@ const styles = StyleSheet.create({
     marginRight: '35%',
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: 'black',
+    backgroundColor: '#4B7EFB',
     width: '40%',
-    height: '5%',
   },
   textInput: {
     fontSize: 16,
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'red',
+    color: '#EF4E93',
     marginTop: 10,
     marginBottom: 6,
     marginLeft: 9,
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'red',
+    color: 'white',
   },
   image: {
     flex: 1,

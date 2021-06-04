@@ -1,6 +1,6 @@
 
-import React  from "react";
-import { ImageBackground, Image, TouchableOpacity, TouchableHighlight, View, Text, SafeAreaView, StyleSheet, TextInput, Clipboard, } from "react-native";
+import React, { useState } from "react";
+import { ImageBackground, Image, TouchableOpacity, TouchableHighlight, View, Text, StyleSheet, TextInput, Clipboard, } from "react-native";
 import RNPickerSelect from 'react-native-picker-select';
 
 const Traductor = ({ navigation }) => {
@@ -13,8 +13,9 @@ const Traductor = ({ navigation }) => {
             placeholder={{
               label: 'Seleccione un lenguaje',
               value: null,
-            }}
+            }}  
             style={picketSelectStyles.inputAndroid}
+            itemStyle={{ backgroundColor: "grey", color: "blue", fontFamily:"Ebrima", fontSize:17 }}
             onValueChange={(value) => console.log(value)}
             items={[
               { label: 'Español', value: 'Español' },
@@ -48,25 +49,29 @@ const Traductor = ({ navigation }) => {
           <TextInput
             style={styles.Input}
             placeholder="Escriba texto..."
+            placeholderTextColor= 'pink'
           />
 
           <TextInput
             style={styles.Input}
             placeholder="Escriba texto..."
+            placeholderTextColor= 'pink'
           />
         </View>
 
-        <View style={styles.viewIconContainer}>
-        <TouchableHighlight style={styles.iconContainer}>
-            <Image style={styles.icon} source={require('../img/copiar.png')} />
-          </TouchableHighlight>
-
-        <TouchableHighlight style={styles.iconContainer}>
+        <View style={styles.viewIconContainer1}>
+          <TouchableHighlight style={styles.iconContainer}>
             <Image style={styles.icon} source={require('../img/audio.png')} />
           </TouchableHighlight>
 
           <TouchableHighlight style={styles.iconContainer}>
             <Image style={styles.icon} source={require('../img/imagen.png')} />
+          </TouchableHighlight>
+        </View>
+
+        <View style={styles.viewIconContainer2}>
+          <TouchableHighlight style={styles.iconContainer}>
+            <Image style={styles.icon} source={require('../img/audio.png')} />
           </TouchableHighlight>
         </View>
 
@@ -90,56 +95,57 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     resizeMode: "cover",
   },
-  viewIconContainer: {
+  viewIconContainer1: {
     flexDirection: "row",
-    marginTop: '-17%',
-    marginRight: '-16%',
+    marginTop: '-60%',
+    marginLeft:'-30%',
+    marginRight: '-15%',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+  },
+  viewIconContainer2: {
+    marginTop: '-62%',
+    marginLeft:'-30%',
+    marginRight: '-15%',
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
   },
   viewInputs: {
-    // flexDirection: 'row',
     marginTop: '15%',
   },
   viewPickerSelect: {
-    marginTop: '30%',
+    //flexDirection: 'row',
+    marginTop: '32%',
+    marginBottom:'-10%'
   },
   Input: {
-    height: 100,
-    backgroundColor: "#fff",
+    height: '28%',
     borderWidth: 1,
-    borderColor: '#2c2c2c',
-    width: "100%",
+    color: '#2c2c2c',
+    borderRadius: 8,
+    borderColor: '#4B7EFB',
+    width: "96%",
     marginTop: -10,
-    marginRight: 5,
-    marginLeft: -5,
-    marginBottom: 10,
-    color: "white",
+    marginLeft: '2%',
+    marginBottom: 20,
     paddingHorizontal: 20,
   },
   button: {
+    position: 'relative',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    marginTop: '-15%',
-    marginBottom: '10%',
+    paddingVertical:12,
+    paddingHorizontal:32,
+    marginTop: '45%',
+    marginBottom: '35%',
+    marginLeft: '30%',
+    marginRight: '35%',
     borderRadius: 4,
     elevation: 3,
+    backgroundColor: '#4B7EFB',
     width: '40%',
   },
-  buttonInput: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    marginTop: '-15%',
-    marginBottom: '10%',
-    borderRadius: 8,
-    elevation: 3,
-    backgroundColor: 'black',
-    width: '30%',
-  },
+
   text: {
     fontSize: 16,
     lineHeight: 21,
@@ -150,7 +156,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     height: 110,
     width: 110,
-
+    marginLeft: '-11%',
   },
   image: {
     flex: 1,
@@ -162,28 +168,17 @@ const styles = StyleSheet.create({
   icon: {
     height: '30%',
     width: '33%',
-    
   },
 });
 
 const picketSelectStyles = StyleSheet.create({
   inputAndroid: {
-    width: '40%',
-    marginTop: 2,
     marginBottom: 2,
     marginRight: 3,
     marginLeft: 3,
     fontSize: 16,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    borderWidth: 2,
-    borderColor: 'red',
-    borderRadius: 8,
-    color: 'black',
-    paddingRight: 30,
-    backgroundColor: 'red',
+    width:'-20%',
   },
 });
-
 
 export default Traductor;
