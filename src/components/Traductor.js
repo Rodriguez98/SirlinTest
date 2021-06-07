@@ -8,7 +8,7 @@ const Traductor = ({ navigation }) => {
   return (
     < View style={styles.container}>
       <ImageBackground source={require('../img/plantilla.png')} style={styles.image}>
-        <View style={[{ marginLeft: "20%", width: "60%", borderColor: "blue", marginTop: "12%", color: 'black', }, styles.viewPickerSelect]}>
+        <View style={styles.viewPickerSelect}>
           <RNPickerSelect
             placeholder={{
               label: 'Seleccione un lenguaje',
