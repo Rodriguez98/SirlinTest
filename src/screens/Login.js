@@ -5,19 +5,22 @@ const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../img/plantilla.png')} style={styles.image}>
+        <View style={styles.viewButton}>
+          <Image source={require('../img/sirlen.png')} />
+        </View>
         <View style={styles.viewInputs}>
           <Text style={styles.textInput}> Usuario </Text>
           <TextInput
             style={styles.Input}
             placeholder="Usuario"
-            placeholderTextColor= 'pink'
+            placeholderTextColor='pink'
           />
 
           <Text style={styles.textInput}> Contraseña </Text>
           <TextInput
             style={styles.Input}
             placeholder="Contraseña"
-            placeholderTextColor= 'pink'
+            placeholderTextColor='pink'
           />
         </View>
 
@@ -41,7 +44,11 @@ const styles = StyleSheet.create({
   },
   viewInputs: {
     // flexDirection: 'row',
-    marginTop: '15%',
+    // marginTop: '15%',
+  },
+  viewButton: {
+    alignItems:'center',
+    marginTop: '25%',
   },
   Input: {
     height: 70,
@@ -58,11 +65,11 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical:12,
-    paddingHorizontal:32,
-    marginTop: '35%',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    marginTop: '11%',
     marginBottom: '35%',
-    marginLeft: '30%',
+    marginLeft: '32 %',
     marginRight: '35%',
     borderRadius: 4,
     elevation: 3,
@@ -75,11 +82,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color: '#EF4E93',
-    marginTop: 10,
+    marginTop: 15,
     marginBottom: 6,
     marginLeft: 9,
   },
-  text:{
+  text: {
     fontSize: 16,
     lineHeight: 21,
     fontWeight: 'bold',

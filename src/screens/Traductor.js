@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { ImageBackground, Image, TouchableOpacity, TouchableHighlight, View, Text, StyleSheet, TextInput, Clipboard, } from "react-native";
+import { ImageBackground, Image, TouchableOpacity, TouchableHighlight, View, Text, StyleSheet, TextInput, Clipboard, _Image, ScrollView } from "react-native";
 import RNPickerSelect from 'react-native-picker-select';
 
 const Traductor = ({ navigation }) => {
@@ -8,25 +8,8 @@ const Traductor = ({ navigation }) => {
   return (
     < View style={styles.container}>
       <ImageBackground source={require('../img/plantilla.png')} style={styles.image}>
-        <View style={styles.viewPickerSelect}>
-          <RNPickerSelect
-            placeholder={{
-              label: 'Seleccione un lenguaje',
-              value: null,
-            }}  
-            style={picketSelectStyles}
-            //itemStyle={{ backgroundColor: "grey", color: "blue", fontFamily:"Ebrima", fontSize:17 }}
-            onValueChange={(value) => console.log(value)}
-            items={[
-              { label: 'Español', value: 'Español' },
-              { label: 'Miskitu', value: 'Miskitu' },
-              { label: 'Rama', value: 'Rama' },
-              { label: 'Mayagna', value: 'Mayagna' },
-              { label: 'Ulwa', value: 'Ulwa' },
-              { label: 'Garifuna', value: 'Garifuna' },
-            ]}
-          />
 
+        <View style={styles.viewPickerSelect}>
           <RNPickerSelect
             placeholder={{
               label: 'Seleccione un lenguaje',
@@ -38,7 +21,23 @@ const Traductor = ({ navigation }) => {
               { label: 'Español', value: 'Español' },
               { label: 'Miskitu', value: 'Miskitu' },
               { label: 'Rama', value: 'Rama' },
-              { label: 'Mayagna', value: 'Mayagna' },
+              { label: 'Mayangna', value: 'Mayangna' },
+              { label: 'Ulwa', value: 'Ulwa' },
+              { label: 'Garifuna', value: 'Garifuna' },
+            ]}
+          />
+          <RNPickerSelect
+            placeholder={{
+              label: 'Seleccione un lenguaje',
+              value: null,
+            }}
+            style={picketSelectStyles.inputAndroid}
+            onValueChange={(value) => console.log(value)}
+            items={[
+              { label: 'Español', value: 'Español' },
+              { label: 'Miskitu', value: 'Miskitu' },
+              { label: 'Rama', value: 'Rama' },
+              { label: 'Mayangna', value: 'Mayangna' },
               { label: 'Ulwa', value: 'Ulwa' },
               { label: 'Garifuna', value: 'Garifuna' },
             ]}
@@ -49,13 +48,13 @@ const Traductor = ({ navigation }) => {
           <TextInput
             style={styles.Input}
             placeholder="Escriba texto..."
-            placeholderTextColor= 'pink'
+            placeholderTextColor='pink'
           />
 
           <TextInput
             style={styles.Input}
             placeholder="Escriba texto..."
-            placeholderTextColor= 'pink'
+            placeholderTextColor='pink'
           />
         </View>
 
@@ -65,7 +64,7 @@ const Traductor = ({ navigation }) => {
           </TouchableHighlight>
 
           <TouchableHighlight style={styles.iconContainer}>
-            <Image style={styles.icon} source={require('../img/imagen.png')} />
+            <Image source={require('../img/imagen.png')} />
           </TouchableHighlight>
         </View>
 
@@ -98,25 +97,26 @@ const styles = StyleSheet.create({
   viewIconContainer1: {
     flexDirection: "row",
     marginTop: '-60%',
-    marginLeft:'-30%',
-    marginRight: '-15%',
+    marginLeft: '-30%',
+    marginRight: '-16%',
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
   },
   viewIconContainer2: {
     marginTop: '-62%',
-    marginLeft:'-30%',
+    marginLeft: '-30%',
     marginRight: '-15%',
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
   },
+
   viewInputs: {
     marginTop: '15%',
   },
   viewPickerSelect: {
     //flexDirection: 'row',
     marginTop: '32%',
-    marginBottom:'-10%'
+    marginBottom: '-10%'
   },
   Input: {
     height: '28%',
@@ -134,14 +134,11 @@ const styles = StyleSheet.create({
     position: 'relative',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical:12,
-    paddingHorizontal:32,
+    paddingVertical: 12,
+    paddingHorizontal: 32,
     marginTop: '45%',
     marginBottom: '35%',
-    marginLeft: '30%',
-    marginRight: '35%',
     borderRadius: 4,
-    elevation: 3,
     backgroundColor: '#4B7EFB',
     width: '40%',
   },
@@ -167,17 +164,19 @@ const styles = StyleSheet.create({
   },
   icon: {
     height: '30%',
-    width: '33%',
+    width: '36%',
   },
 });
 
 const picketSelectStyles = StyleSheet.create({
   inputAndroid: {
+    alignContent:'space-between',
     marginBottom: 2,
     marginRight: 3,
     marginLeft: 3,
     fontSize: 16,
-    width:'-20%',
+    color: 'black',
+    backgroundColor: 'pink',
   },
 });
 

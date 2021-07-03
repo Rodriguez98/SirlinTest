@@ -10,7 +10,7 @@ const Menu = ({ navigation }) => {
         <View style={[{ marginLeft: "20%", width: "60%", borderColor: "blue", marginTop: "12%", color: 'black', }, styles.viewPickerSelect]}>
           <RNPickerSelect
             placeholder={{
-              label: 'Seleccione un lenguaje',
+              label: 'Seleccione una cultura',
               color: "fff",
               value: null,
             }}
@@ -20,7 +20,7 @@ const Menu = ({ navigation }) => {
               { label: 'Español', value: 'Español' },
               { label: 'Miskitu', value: 'Miskitu' },
               { label: 'Rama', value: 'Rama' },
-              { label: 'Mayagna', value: 'Mayagna' },
+              { label: 'Mayangna', value: 'Mayangna' },
               { label: 'Ulwa', value: 'Ulwa' },
               { label: 'Garifuna', value: 'Garifuna' },
             ]}
@@ -29,13 +29,13 @@ const Menu = ({ navigation }) => {
 
         <View style={styles.viewButton1}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('Traductor')}>
+            onPress={() => navigation.navigate('Danza')}>
 
             <Image source={require('../img/danza.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate('Traductor')}>
+            onPress={() => navigation.navigate('Historia')}>
 
             <Image source={require('../img/historia.png')} />
           </TouchableOpacity>
@@ -43,13 +43,13 @@ const Menu = ({ navigation }) => {
 
         <View style={styles.viewButton2}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('Traductor')}>
+            onPress={() => navigation.navigate('Musica')}>
 
             <Image source={require('../img/musica.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate('Traductor')}>
+            onPress={() => navigation.navigate('Turismo')}>
 
             <Image source={require('../img/turismo.png')} />
           </TouchableOpacity>
@@ -61,7 +61,7 @@ const Menu = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   viewPickerSelect: {
-    marginTop: '-15%',
+    marginTop: '-11%',
   },
   viewButton1: {
     flexDirection: "row",
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginLeft: '5%',
     marginRight: '5%',
-    marginTop: '7%',
+    marginTop: '6%',
   },
   viewButton2: {
     flexDirection: "row",
@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
 
 const picketSelectStyles = StyleSheet.create({
   inputAndroid: {
+    width:'104%',
     fontSize: 16,
     paddingHorizontal: 10,
     paddingVertical: 8,
